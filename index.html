@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <title>Birthday Card Carousel</title>
+            <style>
+        body {
+            text-align: center;
+            font-family: 'kalam';
+            font-weight: bold;
+            background-color: #452d39; /* Darker background color */
+            color: #ffd2e7; /* Light text color */
+        }
+
+        #imageContainer {
+            max-width: 400px;
+            margin: 20px auto;
+            border: 5px solid #ff7aa4; /* Pink border */
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden; /* Hide overflowing image corners */
+            box-shadow: 0 0 10px rgba(255, 122, 164, 0.5); /* Soft box shadow with lighter color */
+        }
+
+        .carouselImage {
+            max-width: 100%;
+            max-height: 400px;
+            margin: auto;
+            height: auto;
+            display: none;
+        }
+
+        #imageDescription {
+            margin: 10px;
+            font-size: 18px;
+            color: #ff7aa4; /* Pink text color */
+        }
+
+        #nextButton,
+        #prevButton {
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(to right, #c700ff, #6a00b0); /* Gradient background with purple and pink */
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        #nextButton:hover,
+        #prevButton:hover {
+            background: linear-gradient(to right, #6a00b0, #c700ff);
+            transform: scale(1.05); /* Scale on hover for a subtle effect */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img class="carouselImage" src="ahana/ahana5.jpg" alt="Card 1" width="300px">
+        <img class="carouselImage" src="ahana/ahana10.jpg" alt="Card 2">
+        <img class="carouselImage" src="ahana/ahana6.jpg" alt="Card 3">
+        <img class="carouselImage" src="ahana/ahana9.jpg" alt="Card 4">
+        <img class="carouselImage" src="ahana/ahana4.jpg" alt="Card 5">
+        <img class="carouselImage" src="ahana/ahana7.jpg" alt="Card 6">
+        <img class="carouselImage" src="ahana/ahana8.jpg" alt="Card 7">
+        <img class="carouselImage" src="ahana/ahana13.jpg" alt="Card 8">
+        <img class="carouselImage" src="ahana/ahana17.jpg" alt="Card 9">
+        <img class="carouselImage" src="ahana/ahana12.jpg" alt="Card 10">
+        <img class="carouselImage" src="ahana/ahana15.jpg" alt="Card 11">
+        <img class="carouselImage" src="ahana/ahana14.jpg" alt="Card 12">
+        <img class="carouselImage" src="ahana/ahana16.jpg" alt="Card 13">
+        <img class="carouselImage" src="ahana/ahana3.jpg" alt="Card 15">
+        <img class="carouselImage" src="ahana/ahana19.jpg" alt="Card 14">
+        <img class="carouselImage" src="ahana/ahana18.jpg" alt="Card 16">
+        <img class="carouselImage" src="ahana/ahana1.jpg" alt="Card 17">
+        <img class="carouselImage" src="ahana/ahana2.jpg" alt="Card 18">
+        <img class="carouselImage" src="ahana/ahana11.png" alt="Card 19" width="340px">
+        <img class="carouselImage" src="ahana/Ahana.png" alt="Card 19" width="300px">
+
+
+        <div id="imageDescription"></div>
+    </div>
+    <button id="prevButton" onclick="prevImage()">Previous Card</button>
+    <button id="nextButton" onclick="nextImage()">Next Card</button>
+
+    <script>
+        var currentImageIndex = 0;
+        var maxImages = 20; // Change this to the total number of images
+        var images = document.getElementsByClassName("carouselImage");
+        var descriptions = [
+            "This is the first pic of your's in my phone, and where our friendship starts",
+            "This pic reminds me the fun we have that day :)",
+            "মুগ্ধ করা আকাশ এবং,প্রেম ভরা বাতাস নিয়ে, চোল্লাম কোন এক রাস্তাই,নিজের সোন্ধনে। I hope you did not forgot this :)",
+            "You light up the room with your smile so bright, A friend like you makes everything feel just right.",
+            "No need to mention it's Your prev Birthday...",
+            "I want to see you Happy like this in every Verson of You",
+            "Oma ato Model manus dekchi K tuleche dekchte hbe to",
+            "ami jni na toke kno pic ta baje legechilo amk to sera legeche",
+            "Kon chintai mogno jni na kintu Habby candid aschilo tai Capture korechi",
+            "Cute as hell deklei mone hoi gal duto chotkai",
+            "Aww cute chata wala baccha go...",
+            "ato ki cute hasi ami abr arom hasi dekhte chai",
+            "Ai din ta ato tai sundor ketechilo j protita muhurto special",
+            "jni but ata amk aladai vlo lge",
+            "This pic is Breath Taking so keep it safe 🙃",
+            "MBA join kore na kothao jas na ki j holo tor 😮‍💨",
+            "Sei moja korechilam ai din",
+            "Ai din tao habby chilo tor lamp e jhola pritir talli hoye paglamo aladai chilo",
+            "Kokhono na vulne wala din last time amra vlo kore moja korechilam, last ghurte jawa, last baire khawa also...",
+            "Dear Ahana,\n\nSo I drew the previous pic of you. In this drawing Every single line of this drawing is made of your memories. So if you did not forgot, you said you will keep a promise of me and I told you that my wish is we will be friends in any situation, So please keep that in Mind.\n\n 💫 HAPPY BIRTH DAY 💫\n\n Warm regards,\nYour Well Wisher"
+            // Add more descriptions as needed
+        ];
+
+        // Show the first image and description when the page loads
+        showImage(currentImageIndex);
+
+        function showImage(index) {
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            images[index].style.display = "block";
+
+            // Update the description
+            document.getElementById("imageDescription").innerText = descriptions[index];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % maxImages;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + maxImages) % maxImages;
+            showImage(currentImageIndex);
+        }
+    </script>
+</body>
+</html>
