@@ -83,7 +83,7 @@
         <img class="carouselImage" src="ahana18.jpg" alt="Card 16">
         <img class="carouselImage" src="ahana1.jpg" alt="Card 17">
         <img class="carouselImage" src="ahana11.png" alt="Card 19" width="340px">
-        <img class="carouselImage" src="ahana/ahana19.jpg" alt="Card 20">
+        <img class="carouselImage" src="ahana19.jpg" alt="Card 20">
         <img class="carouselImage" src="Ahana.png" alt="Card 21" width="300px">
 
 
@@ -158,10 +158,10 @@
             for (var i = 0; i < images.length; i++) {
                 images[i].style.display = "none";
             }
-            images[18].style.display = "block";
+            images[index].style.display = "block";
 
             // Update the description
-            document.getElementById("imageDescription").innerText = descriptions[18];
+            document.getElementById("imageDescription").innerText = descriptions[index];
         }
 
         function nextImage() {
