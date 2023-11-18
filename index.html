@@ -116,7 +116,7 @@
 
 
     <audio id="backgroundMusic"  loop preload="auto">
-        <source src="ahana.mp3" type="audio/mp3" >
+        <source src="ahana/ahana.mp3" type="audio/mp3" >
     </audio>
     
     <script>
@@ -137,23 +137,23 @@
         backgroundMusic.autoplay = true;
         backgroundMusic.play();
 
-        var musicPlaying = true; // Variable to track the music state
+        var musicPlaying = true; // Start with music paused
         var togglePlayPauseButton = document.getElementById("togglePlayPause");
 
-        // Set the initial icon based on the initial state of the music
-        togglePlayPauseButton.innerHTML = musicPlaying ? "&#9658;" : "❚❚";
+        // Set the initial icon to the pause button
+        togglePlayPauseButton.innerHTML = "❚❚";
 
         function togglePlayPause() {
             if (musicPlaying) {
                 backgroundMusic.pause();
+                togglePlayPauseButton.innerHTML = "&#9658;"; // Set to pause icon
             } else {
                 backgroundMusic.play();
+                togglePlayPauseButton.innerHTML = "❚❚"; // Set to play icon
             }
             musicPlaying = !musicPlaying; // Toggle the music state
-
-            // Update the button icon based on the current state
-            togglePlayPauseButton.innerHTML = musicPlaying ? "&#9658;" : "❚❚";
         }
+
 
         var descriptions = [
                 
