@@ -91,10 +91,21 @@
     <button id="prevButton" onclick="prevImage()">Previous Card</button>
     <button id="nextButton" onclick="nextImage()">Next Card</button>
 
+
+    <audio id="backgroundMusic" loop>
+        <source src="ahana.mp3" type="audio/mp3">
+    </audio>
+    
+
     <script>
         var currentImageIndex = 0;
         var maxImages = 20; // Change this to the total number of images
         var images = document.getElementsByClassName("carouselImage");
+        var backgroundMusic = document.getElementById("backgroundMusic");
+
+        // Play the background music when the page loads
+        backgroundMusic.play();
+
         var descriptions = [
             "This is the first pic of yours in my phone, and where our friendship bond starts here",
             "This pic reminds me of the fun we have that day :)",
