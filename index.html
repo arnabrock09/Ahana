@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
-    <title>Birthday Card Carousel</title>
+    <title>Happy Birthday Ahana</title>
             <style>
         body {
             text-align: center;
@@ -98,7 +98,7 @@
     <button id="nextButton" onclick="nextImage()">Next Card</button>
 
 
-    <audio id="backgroundMusic" loop preload="auto" autoplay="autoplay">
+    <audio id="backgroundMusic" loop preload="auto">
         <source src="ahana.mp3" type="audio/mp3" >
     </audio>
     
@@ -120,9 +120,10 @@
 
         var backgroundMusic = document.getElementById("backgroundMusic");
 
-
+        backgroundMusic.autoplay = true;
         backgroundMusic.play();
 
+        
 
 
         var descriptions = [
