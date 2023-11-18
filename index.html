@@ -41,28 +41,44 @@
         }
 
         #nextButton,
-#prevButton,#togglePlayPause {
-    font-family: 'Indie Flower', cursive;
-    font-weight: bold;
-    margin-top: 20px;
-    padding: 15px 25px;
-    cursor: pointer;
-    font-size: 18px;
-    color: #fff;
-    background: linear-gradient(to right, #c700ff, #6a00b0);
-    border: none;
-    border-radius: 25px;
-    transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-}
+        #prevButton{
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(to right, #c700ff, #6a00b0);
+            border: none;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
 
-@media (max-width: 768px) {
-    #nextButton:active,
-    #prevButton:active,#togglePlayPause:active {
-        background: linear-gradient(to right, #6a00b0, #c700ff);
-        transform: rotate(10deg);
-        opacity: 0.8;
-    }
-}
+        #togglePlayPause {
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(to right, #c700ff, #6a00b0);
+            border: none;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            #nextButton:active,
+            #prevButton:active {
+                background: linear-gradient(to right, #6a00b0, #c700ff);
+                transform: rotate(10deg);
+                opacity: 0.8;
+            }
+
+           
+        }
 
 
 
@@ -94,8 +110,8 @@
 
         <div id="imageDescription"></div>
     </div>
-    <button id="prevButton" onclick="prevImage()">Previous Card</button>
-    <button id="togglePlayPause" onclick="togglePlayPause()" hidden>Play/Pause</button>
+    <button id="prevButton" onclick="prevImage()">Prev Card</button>
+    <button id="togglePlayPause" onclick="togglePlayPause()">&#9658;</button>
     <button id="nextButton" onclick="nextImage()">Next Card</button>
 
 
@@ -103,14 +119,11 @@
         <source src="ahana.mp3" type="audio/mp3" >
     </audio>
     
-    
-
     <script>
-
         var currentImageIndex = 0;
         var maxImages = 20;
         var images = document.getElementsByClassName("carouselImage");
-        
+
         var preloadedImages = [];
 
         // Preload images
@@ -125,6 +138,10 @@
         backgroundMusic.play();
 
         var musicPlaying = true; // Variable to track the music state
+        var togglePlayPauseButton = document.getElementById("togglePlayPause");
+
+        // Set the initial icon based on the initial state of the music
+        togglePlayPauseButton.innerHTML = musicPlaying ? "&#9658;" : "❚❚";
 
         function togglePlayPause() {
             if (musicPlaying) {
@@ -133,55 +150,54 @@
                 backgroundMusic.play();
             }
             musicPlaying = !musicPlaying; // Toggle the music state
+
+            // Update the button icon based on the current state
+            togglePlayPauseButton.innerHTML = musicPlaying ? "&#9658;" : "❚❚";
         }
 
-
-        
-
-
         var descriptions = [
-            
-        "This is the first pic of yours in my phone, and where our friendship bond starts here",
-            
-            "This pic reminds me of the fun we have that day :)",
-            
-            "মুগ্ধ করা আকাশ এবং,\nপ্রেম ভরা বাতাস নিয়ে,\nচোল্লাম কোন এক রাস্তাই,\nনিজের সোন্ধনে।\n I hope you did not forgot this :)",
-            
-            "You light up the room with your smile so bright,\nA friend like you makes everything feel just right.",
-            
-            "No need to mention it's Your previous Year Birthday...",
-            
-            "I want to see you Happy like this in every Version of You",
-            
-            "Ai din tao habby chilo tor lamp e jhola pritir talli hoye paglamo aladai chilo din gulo",
-            
-            "In the story of my life, you're the another chapter that I never wants to end, bringing warmth and joy to every page, you helped me in every situation in these Days.\n\nGreateful for a friend like you, making each moment unforgettable",
-            
-            "ami jni na toke kno pic ta baje legechilo amk to sera legeche",
-            
-            "🕊️ Peace is not found in the absence of turmoil, but in the presence of a tranquil heart ❤️",
-            
-            "Ai pic deklei dat kiti miti kore 🤣 mone hoi gal duto chotkai\n\n Ja kotha bolbo na ja 🤣",
-            
-            "Cuteness er vandar 🤣",
-            
-            "aito, ki cute hasi ami abr arom hasi dekhte chai",
-            
-            "Ai din ta ato tai sundor ketechilo j protita muhurto special",
-            
-            "jni but ata amk aladai vlo lge",
-            
-            "MBA join kore na kothao jas na kichu, ki j holo tor 😮‍💨",
-            
-            "Sei moja korechilam ai din",
-            
-            "Kokhono na vulne wala din last time amra vlo kore moja korechilam, hasahasi korechilam ,paglamo korechilam er last ghurte jawa...",
-
-            "Kajol kalo ankhi tor,\nRongin thoter sopno vor.\n Ghono kalo keshober maya,\n Mugdho kore noyontara.\nSonar golape lipto lal saree,\nGolai rupor hare monohari.\nSundor moner manus tumi,\n amader Ahana tumi.",
-            
-            "Dear Ahana,\n\nSo I drew this pic of you, In this drawing Every single line of stroke in this drawing is made of your memories, the memories we had together, all the gossip, all the craziness and all the joy are in this Stroke of the Drawing. I just want to say 'We are grateful to have you as a friend'. Even if we guys are not in touch with you, you will be in our heart and part of our life's cherished book, And we love you in every version of you. \n\n If you have not forgotten, one day you told me that 'you will keep a promise to me' and I told you that 'my wish is we will be friends in any situation', So please try to keep that if you can and I did not want to lose one more friend so... \n\n 💫 HAPPY BIRTHDAY AHANA💫\n\n Warm regards,\nYour Well Wisher"
-            // Add more descriptions as needed
-        ];
+                
+                "This is the first pic of yours in my phone, and where our friendship bond starts here",
+                    
+                    "This pic reminds me of the fun we have that day :)",
+                    
+                    "মুগ্ধ করা আকাশ এবং,\nপ্রেম ভরা বাতাস নিয়ে,\nচোল্লাম কোন এক রাস্তাই,\nনিজের সোন্ধনে।\n I hope you did not forgot this :)",
+                    
+                    "You light up the room with your smile so bright,\nA friend like you makes everything feel just right.",
+                    
+                    "No need to mention it's Your previous Year Birthday...",
+                    
+                    "I want to see you Happy like this in every Version of You",
+                    
+                    "Ai din tao habby chilo tor lamp e jhola pritir talli hoye paglamo aladai chilo din gulo",
+                    
+                    "In the story of my life, you're the another chapter that I never wants to end, bringing warmth and joy to every page, you helped me in every situation in these Days.\n\nGreateful for a friend like you, making each moment unforgettable",
+                    
+                    "ami jni na toke kno pic ta baje legechilo amk to sera legeche",
+                    
+                    "🕊️ Peace is not found in the absence of turmoil, but in the presence of a tranquil heart ❤️",
+                    
+                    "Ai pic deklei dat kiti miti kore 🤣 mone hoi gal duto chotkai\n\n Ja kotha bolbo na ja 🤣",
+                    
+                    "Cuteness er vandar 🤣",
+                    
+                    "aito, ki cute hasi ami abr arom hasi dekhte chai",
+                    
+                    "Ai din ta ato tai sundor ketechilo j protita muhurto special",
+                    
+                    "jni but ata amk aladai vlo lge",
+                    
+                    "MBA join kore na kothao jas na kichu, ki j holo tor 😮‍💨",
+                    
+                    "Sei moja korechilam ai din",
+                    
+                    "Kokhono na vulne wala din last time amra vlo kore moja korechilam, hasahasi korechilam ,paglamo korechilam er last ghurte jawa...",
+        
+                    "Kajol kalo ankhi tor,\nRongin thoter sopno vor.\n Ghono kalo keshober maya,\n Mugdho kore noyontara.\nSonar golape lipto lal saree,\nGolai rupor hare monohari.\nSundor moner manus tumi,\n amader Ahana tumi.",
+                    
+                    "Dear Ahana,\n\nSo I drew this pic of you, In this drawing Every single line of stroke in this drawing is made of your memories, the memories we had together, all the gossip, all the craziness and all the joy are in this Stroke of the Drawing. I just want to say 'We are grateful to have you as a friend'. Even if we guys are not in touch with you, you will be in our heart and part of our life's cherished book, And we love you in every version of you. \n\n If you have not forgotten, one day you told me that 'you will keep a promise to me' and I told you that 'my wish is we will be friends in any situation', So please try to keep that if you can and I did not want to lose one more friend so... \n\n 💫 HAPPY BIRTHDAY AHANA💫\n\n Warm regards,\nYour Well Wisher"
+                    // Add more descriptions as needed
+                ];
 
         // Show the first image and description when the page loads
         showImage(currentImageIndex);
@@ -205,7 +221,7 @@
             currentImageIndex = (currentImageIndex - 1 + maxImages) % maxImages;
             showImage(currentImageIndex);
         }
-
     </script>
+
 </body>
 </html>
