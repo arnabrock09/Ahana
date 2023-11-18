@@ -37,6 +37,7 @@
             margin: 10px;
             font-size: 18px;
             color: #ff7aa4; /* Pink text color */
+            text-align: center;
         }
 
         #nextButton,
@@ -71,19 +72,19 @@
         <img class="carouselImage" src="ahana4.jpg" alt="Card 5">
         <img class="carouselImage" src="ahana7.jpg" alt="Card 6">
         <img class="carouselImage" src="ahana8.jpg" alt="Card 7">
-        <img class="carouselImage" src="ahana13.jpg" alt="Card 8">
-        <img class="carouselImage" src="ahana17.jpg" alt="Card 9">
-        <img class="carouselImage" src="ahana12.jpg" alt="Card 10">
-        <img class="carouselImage" src="ahana15.jpg" alt="Card 11">
-        <img class="carouselImage" src="ahana14.jpg" alt="Card 12">
-        <img class="carouselImage" src="ahana16.jpg" alt="Card 13">
+        <img class="carouselImage" src="ahana2.jpg" alt="Card 8">
+        <img class="carouselImage" src="ahana13.jpg" alt="Card 9">
+        <img class="carouselImage" src="ahana17.jpg" alt="Card 10">
+        <img class="carouselImage" src="ahana12.jpg" alt="Card 11">
+        <img class="carouselImage" src="ahana15.jpg" alt="Card 12">
+        <img class="carouselImage" src="ahana14.jpg" alt="Card 13">
+        <img class="carouselImage" src="ahana16.jpg" alt="Card 14">
         <img class="carouselImage" src="ahana3.jpg" alt="Card 15">
-        <img class="carouselImage" src="ahana19.jpg" alt="Card 14">
         <img class="carouselImage" src="ahana18.jpg" alt="Card 16">
         <img class="carouselImage" src="ahana1.jpg" alt="Card 17">
-        <img class="carouselImage" src="ahana2.jpg" alt="Card 18">
         <img class="carouselImage" src="ahana11.png" alt="Card 19" width="340px">
-        <img class="carouselImage" src="Ahana.png" alt="Card 19" width="300px">
+        <img class="carouselImage" src="ahana19.jpg" alt="Card 20">
+        <img class="carouselImage" src="Ahana.png" alt="Card 21" width="300px">
 
 
         <div id="imageDescription"></div>
@@ -104,30 +105,49 @@
         var backgroundMusic = document.getElementById("backgroundMusic");
 
         // Play the background music when the page loads
-         backgroundMusic.autoplay = true;
+         // backgroundMusic.autoplay = true;
         backgroundMusic.play();
 
         var descriptions = [
-            "This is the first pic of yours in my phone, and where our friendship bond starts here",
-            "This pic reminds me of the fun we have that day :)",
-            "মুগ্ধ করা আকাশ এবং,প্রেম ভরা বাতাস নিয়ে, চোল্লাম কোন এক রাস্তাই,নিজের সোন্ধনে।\n I hope you did not forgot this :)",
-            "You light up the room with your smile so bright, A friend like you makes everything feel just right.",
-            "No need to mention it's Your previous Year Birthday...",
-            "I want to see you Happy like this in every Version of You",
-            "Oma ato Model manus dekchi k tuleche dekhte hbe to",
-            "ami jni na toke kno pic ta baje legechilo amk to sera legeche",
-            "Kon chintai mogno jni na kintu Habby candid aschilo tai Capture korechilam",
-            "Cute as hell deklei mone hoi gal duto chotkai",
-            "Aww, cute chata wala baccha 🤣",
-            "ato ki cute hasi ami abr arom hasi dekhte chai",
-            "Ai din ta ato tai sundor ketechilo j protita muhurto special",
-            "jni but ata amk aladai vlo lge",
-            "This pic is Breathtaking so keep it private do not reveal it to Boys🙃",
-            "MBA join kore na kothao jas na ki j holo tor 😮‍💨",
-            "Sei moja korechilam ai din",
-            "Ai din tao habby chilo tor lamp e jhola pritir talli hoye paglamo aladai chilo",
-            "Kokhono na vulne wala din last time amra vlo kore moja korechilam, last ghurte jawa, last baire khawa also...",
-            "Dear Ahana,\n\nSo I drew this pic of you, In this drawing Every single line of stroke in this drawing is made of your memories, the memories we had together, all the gossip, all the craziness and all the joy are in this Stroke of the Drawing. I just want to say 'We are grateful to have you as a friend'. Even if we guys are not in touch with you, you will be in our heart and part of our life's cherished book, And we love you in every version of you. \n\n If you have not forgotten, one day you told me that 'you will keep a promise to me' and I told you that 'my wish is we will be friends in any situation', So please try to keep that if you can and I did not want to lose one more friend so... \n\n 💫 HAPPY BIRTHDAY AHANA💫\n\n Warm regards,\nYour Well Wisher"
+            "1 This is the first pic of yours in my phone, and where our friendship bond starts here",
+            
+            "2 This pic reminds me of the fun we have that day :)",
+            
+            "3 মুগ্ধ করা আকাশ এবং,\nপ্রেম ভরা বাতাস নিয়ে,\nচোল্লাম কোন এক রাস্তাই,\nনিজের সোন্ধনে।\n I hope you did not forgot this :)",
+            
+            "4 You light up the room with your smile so bright,\nA friend like you makes everything feel just right.",
+            
+            "5 No need to mention it's Your previous Year Birthday...",
+            
+            "6 I want to see you Happy like this in every Version of You",
+            
+            "7 Ai din tao habby chilo tor lamp e jhola pritir talli hoye paglamo aladai chilo din gulo",
+            
+            "8 In the story of my life, you're the another chapter that I never wants to end, bringing warmth and joy to every page, you helped me in every situation in these Days.\n\nGreateful for a friend like you, making each moment unforgettable",
+            
+            "9 ami jni na toke kno pic ta baje legechilo amk to sera legeche",
+            
+            "10 🕊️ Peace is not found in the absence of turmoil, but in the presence of a tranquil heart ❤️",
+            
+            "11 Ai pic deklei dat kiti miti kore 🤣 mone hoi gal duto chotkai\n\n Ja kotha bolbo na ja 🤣",
+            
+            "12 Cute chata wala baccha 🤣",
+            
+            "13 aito, ki cute hasi ami abr arom hasi dekhte chai",
+            
+            "14 Ai din ta ato tai sundor ketechilo j protita muhurto special",
+            
+            "15 jni but ata amk aladai vlo lge",
+            
+            "16 MBA join kore na kothao jas na kichu, ki j holo tor 😮‍💨",
+            
+            "17 Sei moja korechilam ai din",
+            
+            "18 Kokhono na vulne wala din last time amra vlo kore moja korechilam, hasahasi korechilam ,paglamo korechilam er last ghurte jawa, last baire khawa also...",
+
+            "19 কাজল কালো আঁখি তার ,\nলাল রঙ্গিন ঠোট. \nঘন কালো চুল \n ",
+            
+            "21 Dear Ahana,\n\nSo I drew this pic of you, In this drawing Every single line of stroke in this drawing is made of your memories, the memories we had together, all the gossip, all the craziness and all the joy are in this Stroke of the Drawing. I just want to say 'We are grateful to have you as a friend'. Even if we guys are not in touch with you, you will be in our heart and part of our life's cherished book, And we love you in every version of you. \n\n If you have not forgotten, one day you told me that 'you will keep a promise to me' and I told you that 'my wish is we will be friends in any situation', So please try to keep that if you can and I did not want to lose one more friend so... \n\n 💫 HAPPY BIRTHDAY AHANA💫\n\n Warm regards,\nYour Well Wisher"
             // Add more descriptions as needed
         ];
 
@@ -138,10 +158,10 @@
             for (var i = 0; i < images.length; i++) {
                 images[i].style.display = "none";
             }
-            images[index].style.display = "block";
+            images[18].style.display = "block";
 
             // Update the description
-            document.getElementById("imageDescription").innerText = descriptions[index];
+            document.getElementById("imageDescription").innerText = descriptions[18];
         }
 
         function nextImage() {
