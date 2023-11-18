@@ -41,7 +41,7 @@
         }
 
         #nextButton,
-#prevButton {
+#prevButton,#togglePlayPause {
     font-family: 'Indie Flower', cursive;
     font-weight: bold;
     margin-top: 20px;
@@ -57,7 +57,7 @@
 
 @media (max-width: 768px) {
     #nextButton:active,
-    #prevButton:active {
+    #prevButton:active,#togglePlayPause:active {
         background: linear-gradient(to right, #6a00b0, #c700ff);
         transform: rotate(10deg);
         opacity: 0.8;
@@ -95,10 +95,11 @@
         <div id="imageDescription"></div>
     </div>
     <button id="prevButton" onclick="prevImage()">Previous Card</button>
+    <button id="togglePlayPause" onclick="togglePlayPause()" hidden>Play/Pause</button>
     <button id="nextButton" onclick="nextImage()">Next Card</button>
 
 
-    <audio id="backgroundMusic" loop preload="auto">
+    <audio id="backgroundMusic"  loop preload="auto">
         <source src="ahana.mp3" type="audio/mp3" >
     </audio>
     
@@ -122,6 +123,18 @@
 
         backgroundMusic.autoplay = true;
         backgroundMusic.play();
+
+        var musicPlaying = true; // Variable to track the music state
+
+        function togglePlayPause() {
+            if (musicPlaying) {
+                backgroundMusic.pause();
+            } else {
+                backgroundMusic.play();
+            }
+            musicPlaying = !musicPlaying; // Toggle the music state
+        }
+
 
         
 
